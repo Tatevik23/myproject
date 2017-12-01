@@ -1,16 +1,8 @@
 #!/usr/bin/evn bash
 fileStrings=$(cat $1)
-echo $fileStrings 
 lines=($fileStrings)
-echo ${lines[2]}
-#IFS=$'\n' read -d -r -a lines < $1
 lenght=${#lines[@]}
-echo $lenght
-for (( i = 0; i < $lenght; i++))
-do
-    echo ${lines[$i]}
-done
-
+#Bubble sort 
 for (( i=0; i < $lenght; i++))
 do
     for (( j=$i; j < $lenght; j++))
@@ -23,12 +15,8 @@ do
     done
 done
 
-for (( i=0; i < $lenght; i++))
-do 
-    echo ${lines[$i]}
-done
-if [ -f "outputresult" ]; then
-    rm -rf "outputResult"
+if [ -f "outputResult" ]; then
+   rm -rf "outputResult"
 fi    
 
 for j in ${lines[@]}

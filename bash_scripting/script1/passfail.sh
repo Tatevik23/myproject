@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 passfiles=pass_files
 failfiles=fail_files
+#Remove files
 if [ -d $passfiles ] && [ -d $failfiles ]
 then 
-    echo "MTAAV"
     rm -rf "$passfiles"
     rm -rf "$failfiles"
 fi
-allfiles=`find ./log/ -type f`
-echo $allfiles
+
 mkdir $passfiles
 mkdir $failfiles
-
+#Loop for all files
+allfiles=`find ./log/ -type f`
 for file in $allfiles
 do
     if [ -f $file ]
@@ -19,13 +19,12 @@ do
         if grep -q -i 'pass' $file -R
         then
             cp $file $passfiles/$(basename $file)"_pass"
-            echo $file
         else
             cp $file $failfiles/$(basename $file)"_fail"
         fi
     fi
 done
-
+#Pass & fail files count
 echo "Pass files count" 
 ls ./pass_files/ | wc -l
 echo "Fail files count"
