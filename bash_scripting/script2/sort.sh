@@ -2,7 +2,8 @@
 fileStrings=$(cat $1)
 lines=($fileStrings)
 lenght=${#lines[@]}
-#Bubble sort 
+
+# Sort the given file content lexicographically by using bubble sort algorithm and collect into another file.
 for (( i=0; i < $lenght; i++))
 do
     for (( j=$i; j < $lenght; j++))

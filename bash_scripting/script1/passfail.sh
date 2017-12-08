@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 passfiles=pass_files
 failfiles=fail_files
-#Remove files
+#Remove directories if they exists to be able to create new ones.
 if [ -d $passfiles ] && [ -d $failfiles ]
 then 
     rm -rf "$passfiles"
@@ -10,8 +10,11 @@ fi
 
 mkdir $passfiles
 mkdir $failfiles
-#Loop for all files
+
+# Find all files in log directory recursively.
 allfiles=`find ./log/ -type f`
+
+#Loop over all files, find all pass files and copy them in newly created 'passfiles' directory with $file_pass names. The same for fail files.
 for file in $allfiles
 do
     if [ -f $file ]
@@ -24,7 +27,8 @@ do
         fi
     fi
 done
-#Pass & fail files count
+
+#Print pass & fail files count
 echo "Pass files count" 
 ls ./pass_files/ | wc -l
 echo "Fail files count"
