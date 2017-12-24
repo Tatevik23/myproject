@@ -1,0 +1,10 @@
+<Names>
+    <Gayane>
+        <min>3</min>
+        <max>30</max>
+    </Gayane>
+    <Nelly>
+        <min>0</min>
+        <max>100</max>
+    </Nelly>
+</Names>

@@ -1,0 +1,10 @@
+<Names>
+    <Nelly>
+        <min>0</min>
+        <max>30</max>
+    </Nelly>
+    <Gagik>
+        <min>5</min>
+        <max>50</max>
+    </Gagik>
+</Names>

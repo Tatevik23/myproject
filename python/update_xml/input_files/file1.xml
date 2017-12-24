@@ -1,0 +1,10 @@
+<Names>
+    <Tatev>
+        <min>1</min>
+        <max>16</max>
+    </Tatev>
+    <Gayane>
+        <min>2</min>
+        <max>20</max>
+    </Gayane>
+</Names>
