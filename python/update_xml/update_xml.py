@@ -35,25 +35,29 @@ def merging_path_file():
 
 def getting_min_max(tag, min_max_tag): 
     input_files = merging_path_file()
-  #  print(input_files)
-
-#file_paths = configmap(config_file)
-#directory = getting_path(config_file)
-#for filename in file_paths:
-  #  print(os.path.join(directory, filename))
- #   myfile = os.path.join(directory, filename)
+    min_value = []
     for parse_file in input_files:
         tree = ET.parse(parse_file)
         root = tree.getroot()
         for child in root.findall(tag):
-           # print(child.find('Tatev').text)
-            min_value = []
             minValue = child.find(min_max_tag).text
             min_value.append(minValue)
-           # max_value = []
-            #maxValue = child.find('max').text
-           # max_value.append(maxValue)
-            return min_value    
+    return min_value
+   
+def getting_min_value():
+    var = getting_min_max('Tatev','min')
+    for x in var:
+        if var[0] > x:
+            return x
+
+def getting_max_value():
+    values = getting_min_max('Tatev', 'max')
+    for x in values:
+        if values[0] < x:
+            return x
+
+print(getting_max_value())
+print(getting_min_value())
 print(getting_min_max('Tatev', 'min')) 
 print(getting_min_max('Tatev','max')) 
 print(getting_min_max('Gayane','min'))
