@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import random
-import os.path
 import argparse
 import logging
 logging.basicConfig(filemode="w", 
@@ -67,54 +66,19 @@ class Stack():
             
 def main():
     instance = Stack()
-    file = open('golden', 'w')   
-    if os.path.isfile('file'):
-        file2 = open('newfile', 'w')
-        print("Heloooooo")
     instance.pop()
-    if (instance.isEmpty()):
-        file.write("Stack is empty\n")
-    file.write("Removing top element\n")
-
     for number in random.sample(range(1,10),5):
         instance.push(number)
-    if (instance.isFull()):
-        file.write("Stack is full\n")
-
+    instance.isFull()
     instance.top()
-    file.write("Calling top element\n")
-
     instance.pop()
-    if (instance.isEmpty()):
-        file.write("Stack is empty\n")
-    file.write("Removing top element\n")
-
-    instance.capacity()
-    capacity = str(instance.maximum_size)
-    file.write("Stack size is: " + capacity + '\n')
-    
-    instance.top()
-    file.write("Calling top element\n")
-
     instance.isEmpty()
-    if (instance.isEmpty()):
-        file.write("Stack is empty\n")
-
+    instance.capacity()
+    instance.top()
+    instance.isEmpty()
     instance.pop()
-    if (instance.isEmpty()):
-       file.write("Stack is empty" + '\n')
-    file.write("Removing top element" + '\n')
-
     instance.top()
-    file.write("Calling top element\n")
-
     instance.push(30)
-    file.write("Adding element\n")
-
     instance.top()
-    file.write("Calling top element\n")
-
     instance.real_size()
-    
-    #compareWithGolden()
 main()
