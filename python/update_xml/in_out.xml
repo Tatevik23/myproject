@@ -1,10 +1,10 @@
 <Names>
     <Tatev>
-        <min>7</min>
-        <max>17</max>
+        <min updated="yes">-1</min>
+        <max>67</max>
     </Tatev>
     <Gayane>
-        <min>0</min>
-        <max>8</max>
+        <min>1</min>
+        <max>10</max>
     </Gayane>
 </Names>
