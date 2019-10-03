@@ -37,12 +37,12 @@ try:
 except:
     page_id = "3047893"
 
-url = "http://confluence.marketcomllc.com/rest/api/content/"
-api = ConfluenceAPI(user, pswd, 'http://confluence.marketcomllc.com/')
+url = "http://confluence.test.com/rest/api/content/"
+api = ConfluenceAPI(user, pswd, 'http://confluence.test.com/')
 
 # For testing
-#url = "http://dev.confluence.marketcomllc.com:8090/rest/api/content/"
-#api = ConfluenceAPI(user, pswd, 'http://dev.confluence.marketcomllc.com:8090/')
+#url = "http://dev.confluence.test.com:8090/rest/api/content/"
+#api = ConfluenceAPI(user, pswd, 'http://dev.confluence.test.com:8090/')
 
 def get_content_dict(url):
     """Getting content with all page ids
